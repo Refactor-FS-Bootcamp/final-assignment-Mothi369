@@ -9,7 +9,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
-
+import firebase from 'firebase';
 
 const Header = () => {
     const user =useSelector(selectUser)
@@ -43,7 +43,7 @@ const Header = () => {
             <IconButton>
                 <AppsIcon />
             </IconButton>
-            <Avatar src={user?.photoURL}/>
+            <Avatar src={user?.photoURL} onClick={()=>firebase.auth().signOut()}/>
         </div>
     </div>
   )

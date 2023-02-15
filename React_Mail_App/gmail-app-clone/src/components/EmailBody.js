@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { openMsg } from '../features/mailSlice'
 
-const EmailBody = ({name,subject,content,time}) => {
+const EmailBody = ({name,subject,content,email,time}) => {
     const history=useHistory()
     const dispatch=useDispatch()
 
@@ -14,6 +14,7 @@ const EmailBody = ({name,subject,content,time}) => {
             name,
             subject,
             content,
+            email,
             time
         }))
         history.push("/mail")

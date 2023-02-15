@@ -72,8 +72,8 @@ const EmailDetail = () => {
                             <Avatar />
                         </IconButton>
 
-                        <h4>{Mail.subject}</h4>
-                        <p>{Mail.name}</p>
+                        <h4>{Mail.name}</h4>
+                        <p>{Mail.email}</p>
                     </div>
                     <div className='emailDetail_middleRight'>
                         <p>{Mail.time}</p>
