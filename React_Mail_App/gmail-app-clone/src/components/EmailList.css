@@ -1,4 +1,5 @@
 
+
 .emailList{
     display: flex;
     flex-direction: column;
@@ -69,20 +70,34 @@ font-weight: bold;
     display: flex;
     align-items: center;
     border-bottom: 1px solid whitesmoke;
-    padding: 0 10px;
+    padding: 5px 10px;
     height: 40px;
     
 }
 .emailBody:hover{
     box-shadow: 2px 2px 4px gray;
     cursor: pointer;
+   
+
+}
+.emailBody_icons{
+    
+    display: flex;
+    margin-right: 10px;
+   align-items: center;
+    opacity: 0;
 }
 
+.emailBody_icons:hover{
+    
+    opacity: 1;
+  
+}
 .emailBody_left{
     display: flex;
     align-items: center;
     max-width: 300px;
-    flex: 22%;
+    flex: 29%;
 }
 .emailBody_left svg{
     font-size: 19px;
@@ -98,7 +113,7 @@ font-weight: bold;
     display: flex;
     align-items: center;
    
-    flex: 80%;
+    flex: 75%;
 }
 .emailBody_middle_msg{
     display: flex;

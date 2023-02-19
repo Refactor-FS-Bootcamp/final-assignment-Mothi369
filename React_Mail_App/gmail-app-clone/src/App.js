@@ -13,6 +13,7 @@ import { auth } from './firebase';
 
 
 
+
 function App() {
   const isComposeOpen=useSelector(selectsendMessageIsOpen);
   const user= useSelector(selectUser);
@@ -33,7 +34,7 @@ function App() {
   return (
     <Router>
       {
-        user && (
+        user ? (
       <div className="App">
         <Header />
         <div className="app_body">
@@ -46,6 +47,7 @@ function App() {
             <Route path="/mail">
               <EmailDetail />
             </Route>
+           
           </Switch>
 
         </div>
@@ -53,10 +55,10 @@ function App() {
           isComposeOpen && <Compose />
         }
       </div>
-      )}:{
+      ):(
         <Login/>
       
-    }
+      )}
     </Router>
   );
 }

@@ -14,19 +14,27 @@ import LabelIcon from '@material-ui/icons/Label';
 import ReportIcon from '@material-ui/icons/Report';
 import { useDispatch } from 'react-redux';
 import { openSendMsg } from '../features/mailSlice';
+import { useHistory } from 'react-router-dom';
 
 const Sidebar = () => {
+  const history=useHistory()
   const dispatch= useDispatch()
   return (
     <div className='sidebar'>
-        <Button startIcon={<AddIcon/>} className="compose_btn" onClick={()=>dispatch(openSendMsg())   }>Compose</Button>
+        <Button startIcon={<AddIcon/>} className="compose_btn" onClick={()=>dispatch(openSendMsg())}>Compose</Button>
         <SidebarOptions Icon={InboxIcon} title="Inbox" number="232" isactive={true}/>
         <SidebarOptions Icon={StarOutlineIcon} title="starred" number="22" />
         <SidebarOptions Icon={AccessTimeIcon} title="Snoozed" number="2" />
         <SidebarOptions Icon={SendIcon} title="Sent" number="12" />
         <SidebarOptions Icon={DraftsIcon} title="Drafts" number="3" />
         <SidebarOptions Icon={ReportIcon} title="Spam" number="52" />
-        <SidebarOptions Icon={DeleteIcon} title="Bin" number="32" />
+        
+        
+        <div className='binIcon'>
+          <Button startIcon={<DeleteIcon/>}>Bin  </Button>
+          <p>33</p>
+        </div>
+        {/* <DeleteIcon className='binIcon' onClick={()=>history.push("/bin")}/>Bin  */}
         <SidebarOptions Icon={LabelIcon} title="Categories" number="3" />
     </div>
   )
